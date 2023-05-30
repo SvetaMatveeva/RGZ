@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Благотворительный фонд САМФАР</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function showCurs() {
+
+            let curs = [522.60, 519.20, 520.80, 520.60, 516.60, 518.00, 509.60, 510.00, 523.20, 
+            515.20, 513.40, 516.00, 516.00, 516.60, 515.60, 520.00, 515.20, 522.60, 515.80, 521.80 ];
+            let date = ['03.04.2023', '04.04.2023', '05.04.2023', '06.04.2023', '07.04.2023', 
+            '10.04.2023','11.04.2023', '12.04.2023', '13.04.2023', '14.04.2023', '17.04.2023', 
+            '18.04.2023','19.04.2023', '20.04.2023', '21.04.2023', '24.04.2023', '25.04.2023', 
+            '26.04.2023','27.04.2023', '28.04.2023'];
+            let cursTable = document.getElementById('TableCurs');
+
+            for (let i = 0; i<curs.length; i++) {
+                let tr = document.createElement('tr');
+                let dateTd = document.createElement('td');
+                let cursTd = document.createElement('td');
+                dateTd.innerHTML = date[i];
+                cursTd.innerHTML = curs[i];;
+                tr.appendChild(dateTd);
+                tr.appendChild(cursTd);
+                cursTable.appendChild(tr);
+            }
+
+            let sum = 0;
+            for (let i = 0; i<curs.length; i++) {
+                sum = sum + curs[i];
+            }
+            let average = sum / curs.length;
+            document.getElementById('middlenum').innerHTML = 'Среднее квадтратическое отклнение: ' + average;
+
+            let maxCurs = Math.max(...curs);
+            let minCurs = Math.min(...curs);
+            document.getElementById('max').innerHTML = 'Максимльное значение: ' + maxCurs;
+            document.getElementById('min').innerHTML = 'Минимальное значение: ' + minCurs;
+
+        }
+    </script>
+</head>
+<body style="background-image: url('https://safmar.ru/i/change_background_sc/img__1582.jpg');">
+    <header>
+        <div class="wrapper"><header class="header"><div class="header__top"><a class="logo"></a></nav><p class="header__phone"><b>+7 (495) 230 04 07</b></p><a><b class="header__mail">mailto:safmar@safmar.ru</b></a></div>
+        
+        <nav class="menu"><div class="menu__item"><a class="menu__link" href="one.html">О компании</a></div>
+            <div class="menu__item"><a class="menu__link" href="two.html" style="color: red;">Основные финансовые показатели</div>
+            <div class="menu__item"><a class="menu__link" href="three.html">Контактные данные</a></div>
+            <div class="menu__item"><a class="menu__link" href="four.html">Видео</a></div>
+        </div>
+    </header>
+    
+    <main class="wrapper">
+    <h1 class="zag">Основные финансовые показатели - САМФАР</h1>
+
+    <h3>Капитализация на конец апреля</h2>
+    <p class="text">54.9 млрд. RUB</p>
+
+    <h3>Общее число акций</h2>
+    <p class="text">49 198 807</p>
+
+    <h2>Цены закрытия за апрель</h2>
+
+    <div >
+
+        <button class= 'margin: auto' id="curs" onclick="showCurs()">Курс акций</button>
+        <table border="1" id="TableCurs" style=" width: 100%;"></table>
+        <div id="middlenum"></div>
+        <div id="max"></div>
+        <div id="min"></div>
+
+    </div>
+
+    </main>
+<footer class="wrapper1">
+    <div class="footer">
+        <div style="color: white; line-height: 50px;">Copyright © "САФМАР", 2014. Официальное уведомление</div>
+    </div>      
+    </footer>
+</body>
+</html>
