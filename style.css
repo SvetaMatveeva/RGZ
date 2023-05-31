@@ -9,15 +9,26 @@
 
 .wrapper1 { 
     width: 1112px; 
-    margin: 0 auto; 
+    margin: 10px 700px 100px 150px; 
     padding: 25px 66px; 
-    position: relative; 
+    position: absolute; 
 }
 
 .wrapper_transparent { 
     background: none; 
     min-height: 0; 
 }
+
+header {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    color: black;
+    width: 1240px; 
+    margin: 10px 700px 100px 80px;
+    display: inline-block;
+    z-index: 1;
+  }
 
 .header__top { border-collapse: collapse; 
     display: table; 
