@@ -33,12 +33,18 @@
                 sum = sum + curs[i];
             }
             let average = sum / curs.length;
-            document.getElementById('middlenum').innerHTML = 'Среднее квадтратическое отклнение: ' + average;
+            document.getElementById('middlenum').innerHTML = 'Среднее: ' + average;
+
+            let j = 0;
+            for (let b = 0; b<curs.length; b++) {
+                j = j + ((curs[b]-average)**2)
+             }
 
             let maxCurs = Math.max(...curs);
             let minCurs = Math.min(...curs);
             document.getElementById('max').innerHTML = 'Максимльное значение: ' + maxCurs;
             document.getElementById('min').innerHTML = 'Минимальное значение: ' + minCurs;
+            document.getElementById('show_standard_deviation').innerHTML = "Среднеквадратическое отклонение: " + Math.sqrt(j).toFixed(6);
 
         }
     </script>
@@ -72,6 +78,7 @@
         <div id="middlenum"></div>
         <div id="max"></div>
         <div id="min"></div>
+        <div style="color: rgb(0, 0, 0);"><div id="show_standard_deviation"></div>
 
     </div>
 
